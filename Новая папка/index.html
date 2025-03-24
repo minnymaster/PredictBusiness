@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Анализ предпринимательских способностей</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Краткая информация о системе -->
+        <section id="info">
+            <h1>Анализ предпринимательских способностей</h1>
+            <p>Эта система анализирует несколько факторов, чтобы предсказать вероятность того, что человек будет заниматься предпринимательской деятельностью. Заполните форму ниже для анализа ваших данных.</p>
+        </section>
+
+        <!-- Форма ввода данных -->
+        <section id="form">
+            <h2>Введите ваши данные</h2>
+            <form id="analysisForm" method="post">
+                <label for="gpa">Средний балл в старшей школе (GPA):</label>
+                <input type="number" id="gpa" name="gpa" min="0" max="5" step="0.01" required><br>
+
+                <label for="universityGPA">Средний балл в университете (University GPA):</label>
+                <input type="number" id="universityGPA" name="universityGPA" min="0" max="5" step="0.01" required><br>
+
+                <label for="satisfaction">Удовлетворенность карьерой (Career Satisfaction):</label>
+                <select id="satisfaction" name="satisfaction" required>
+                    <option value="0">Очень неудовлетворен</option>
+                    <option value="1">Неудовлетворен</option>
+                    <option value="2">Нейтрально</option>
+                    <option value="3">Удовлетворен</option>
+                    <option value="4">Очень удовлетворен</option>
+                </select><br>
+
+                <label for="internships">Завершенные стажировки (Internships Completed):</label>
+                <input type="number" id="internships" name="internships" min="0" required><br>
+
+                <label for="projects">Завершенные проекты (Projects Completed):</label>
+                <input type="number" id="projects" name="projects" min="0" required><br>
+
+                <label for="skills">Оценка мягких навыков (Soft Skills Score):</label>
+                <input type="number" id="skills" name="skills" min="0" max="10" required><br>
+
+                <label for="networking">Оценка сетевого взаимодействия (Networking Score):</label>
+                <input type="number" id="networking" name="networking" min="0" max="10" required><br>
+
+                <button type="submit" id="submitBtn">Анализировать</button>
+            </form>
+        </section>
+
+        <!-- Результаты анализа -->
+        <section id="result">
+            <h2>Результаты анализа:</h2>
+            <p id="resultText">Заполните форму и нажмите "Анализировать" для получения результатов.</p>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
