@@ -1,7 +1,7 @@
 document.getElementById('analysisForm').addEventListener('submit', function(e) {
-    e.preventDefault(); // Предотвращаем отправку формы
+    e.preventDefault();
 
-    // Собираем данные из формы
+ 
     let gpa = document.getElementById('gpa').value;
     let universityGPA = document.getElementById('universityGPA').value;
     let satisfaction = document.getElementById('satisfaction').value;
@@ -10,7 +10,7 @@ document.getElementById('analysisForm').addEventListener('submit', function(e) {
     let skills = document.getElementById('skills').value;
     let networking = document.getElementById('networking').value;
 
-    // Валидация данных перед отправкой
+  
     let errorMessages = [];
 
     if (gpa === '' || gpa < 0 || gpa > 5) errorMessages.push('Средний балл в старшей школе (GPA) должен быть от 0 до 5.');
@@ -21,13 +21,13 @@ document.getElementById('analysisForm').addEventListener('submit', function(e) {
     if (skills === '' || skills < 0 || skills > 10) errorMessages.push('Оценка мягких навыков должна быть от 0 до 10.');
     if (networking === '' || networking < 0 || networking > 10) errorMessages.push('Оценка сетевого взаимодействия должна быть от 0 до 10.');
 
-    // Если есть ошибки, показываем их и не отправляем форму
+   
     if (errorMessages.length > 0) {
         alert(errorMessages.join('\n'));
         return;
     }
 
-    // Подготовка данных для отправки на сервер
+ 
     let data = {
         gpa: gpa,
         universityGPA: universityGPA,
@@ -38,7 +38,7 @@ document.getElementById('analysisForm').addEventListener('submit', function(e) {
         networking: networking
     };
 
-    // Отправка данных через AJAX
+   
     let xhr = new XMLHttpRequest();
     xhr.open("POST", "your_backend_endpoint", true);
     xhr.setRequestHeader("Content-Type", "application/json");
